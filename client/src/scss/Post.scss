@@ -1,0 +1,238 @@
+@import '../index.scss'; 
+.Post{
+    width: 60%;
+    box-shadow: rgba(0, 0, 0, 0.034) 0px 0px 10px;
+    background: white;
+    transition: all ease-in-out 0.2s;
+    margin: 10px auto;
+    border-radius: 5px;
+
+    .header{
+        width: 100%;
+        height: 70px;
+        display: flex;
+        align-items: center;
+        padding: 0px 15px;
+        gap: 10px;
+
+        img{
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            object-fit: cover;
+
+            &:last-of-type{
+                margin-left: auto;
+                transform: translateY(25%);
+                width: 30px;
+                margin-right: 10px;
+                border-radius: unset;
+                opacity: 0.6;
+                object-fit: contain;
+            }
+        }
+
+        h2{
+            font-size: 1.3rem;
+            color: $darktext;
+            cursor: default;
+        }
+    }
+
+    .main{
+        width: 100%;
+        padding: 10px;
+        padding-top: 0px;
+
+        .main-display{
+            width: 100%;
+            background: rgba(0, 0, 0, 0.027);
+            position: relative;
+
+            &>img{
+                border-radius: 5px;
+            }
+
+            .pic-large-view{
+                width:100%
+            }
+
+            .pic-small-view{
+                height:60vh;
+                width:100%;
+                object-fit:contain;
+                margin:0 auto;
+            }
+
+            p{
+                position: absolute;
+                top: 20px;
+                cursor: pointer;
+                opacity: 0;
+                transition: all ease-in-out 0.2s;
+                right: 20px;
+                background: rgba(0, 0, 0, 0.712);
+                padding: 10px 12px;
+
+                img{
+                    width: 20px;
+                    height: 20px;
+                }
+            }
+
+            &:hover>p{
+                opacity: 1;
+            }
+
+            .image-loading{
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                overflow: hidden;
+                left: 0;
+                background: #e2e2e2;
+            }
+            
+            .image-loading::after{
+                content: "";
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                transform: translateX(-100%);
+                background: linear-gradient(90deg,transparent,rgba(255, 255, 255, 0.644),transparent);
+                animation: load 0.8s infinite;
+            }
+            @keyframes load {
+                100%{
+                    transform: translateX(100%);
+                }
+            }
+
+            video{
+                width: 100%;
+                height: 60vh;
+            }
+
+            h6{
+                padding: 10px;
+                background: white;
+                font-size: 2rem;
+            }
+        }
+
+        .main-details{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+
+            .about{
+
+                .menus{
+                    display: flex;
+                    gap: 15px;
+                    padding: 10px;
+
+                    img{
+                        height: 30px;
+                    }
+
+                    p{
+                        font-size: 1.5rem;
+                        color: black;
+                    }
+                }
+                .post-message{
+                    margin-top: 6px;
+                    padding: 0px 10px;
+                    font-size: 1.2rem;
+                    color: $darktext;
+                    margin-bottom: 6px;
+                }
+            }
+
+            h4{
+                padding: 8px;
+                color: grey;
+                cursor: pointer;
+
+            }
+
+            .comments{
+                width: 100%;
+                padding: 10px;
+                color: rgb(94, 93, 93);
+                max-height: 200px;
+                overflow: auto;
+
+                p{
+                    width: 100%;
+                    padding: 2px 0px;
+
+                    span{
+                        font-weight: 800;
+                        color: $darktext;
+                    }
+                }
+            }
+
+            .message-box{
+                padding: 10px;
+                display: flex;
+                gap: 8px;
+                padding-top: 15px;
+                padding-bottom: 0px;
+
+                input{
+                    width: 100%;
+                    outline: none;
+                    border: none;
+                    padding: 10px 15px;
+                    font-size: 1.2rem;
+                    background: $lightbg;
+                }
+
+                img{
+                    width: 30px;
+                    height: 30px;
+                    object-fit: contain;
+                    transition: all ease-in-out 0.2s;
+                    margin: 5px;
+
+                    &:active{
+                        transform: scale(0.9);
+                    }
+                }
+            }
+
+        }
+
+
+    }
+
+}
+
+@media screen and (max-width:1200px) {
+    .Post{
+        width: 80%;
+    }
+}
+@media screen and (max-width:760px) {
+    .Post{
+        width: 90%;
+    }
+}
+@media screen and (max-width:600px) {
+    .Post{
+        width: 100%;
+        border-radius: unset;
+
+        .main{
+            .main-display{
+                p{
+                    display: none;
+                }
+            }
+        }
+    }
+}

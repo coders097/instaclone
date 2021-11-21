@@ -1,0 +1,323 @@
+.__head_one{
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    text-align: center;
+    font-size: 1.6rem;
+    border-bottom: solid rgb(16, 86, 95) 5px;
+    padding: 2px 15px;
+    transform: translateX(-50%);
+}
+.LandingPage_hero{
+    height: calc(100vh - 70px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    gap: 20px;
+    position: relative;
+
+    &:after{
+        position: absolute;
+        content: "";
+        background: url(../assets//backgroundtexture.jpg) no-repeat center;
+        background-size: cover;
+        left: 0;
+        top: 0;
+        width: 100%;
+        opacity: 0.2;
+        z-index: -1;
+        height: 100vh;
+    }
+
+    h2{
+        font-size: 2.4rem;
+        width: 50%;
+        color: rgb(16, 86, 95);
+        text-align: center;
+    }
+    p{
+        font-size: 1.2rem;
+        width: 80%;
+        text-align: center;
+    }
+    video{
+        max-height: calc(100vh - 280px);
+        max-width: 90%;
+        border-radius: 12px;
+        box-shadow: rgba(0, 0, 0, 0.336) 0px 0px 10px;
+    }
+
+    @media screen and (max-width:1010px) {
+        h2{
+            width: 80%;
+        }   
+    }
+}
+
+.LandingPage_about{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: calc(100vh - 70px);
+    position: relative;
+    background: white;
+
+
+    p{
+        span{
+            color: rgb(16, 86, 95);
+            font-size: 2.5rem;    
+        }
+        width: 75%;
+        text-align: center;
+        color: rgb(92, 91, 91);
+        font-size: 2.2rem;
+        margin-bottom: 20px;
+    }
+
+    h2{
+        font-size: 1.5rem;
+
+        span{
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: orange;
+        }
+    }
+
+
+    @media screen and (max-width:950px) {
+        p{
+            span{
+                color: rgb(16, 86, 95);
+                font-size: 2rem;    
+            }
+            width: 85%;
+            font-size: 1.9rem;
+        }
+    }
+}
+
+.LandingPage_explore{
+    position: relative;
+    min-height: calc(100vh - 70px);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h3{
+        text-align: center;
+        font-size: 1.6rem;
+        border-bottom: solid rgb(16, 86, 95) 5px;
+        padding: 5px 0px;
+        margin: 20px 0px;
+    }
+
+    &>p{
+        font-size: 1.3rem;
+        width: 90%;
+        text-align: center;
+        margin-bottom: 20px;
+        color: rgb(75, 75, 75);
+    }
+
+    .items{
+        width: 90%;
+        padding: 15px;
+        display: flex;
+        flex-wrap: wrap;
+        row-gap: 40px;
+        justify-content: space-around;
+        align-items: center;
+
+        .item{
+            width: 220px;
+            transition: all ease-in-out 0.2s;
+            height: 220px;
+            cursor: default;
+            margin: 0px 50px;
+            border-radius: 15px;
+            padding: 20px;
+
+            &:hover{
+                box-shadow: rgba(70, 70, 70, 0.527) 8px 8px 8px,rgb(255, 255, 255) -8px -8px 8px;
+            }
+
+            img{
+                width: 50px;
+                height: 50px;
+                margin-bottom: 10px;
+                object-fit: contain;
+            }
+
+            h4{
+                font-size: 1.5rem;
+                color: rgb(16, 86, 95);
+                margin-bottom: 6px;
+            }
+
+            p{
+                color: rgb(58, 58, 58);
+            }
+        }
+
+        @media screen and (max-width:1100px) {
+            .item{
+                margin: 0px 10px; 
+            }
+        }
+
+    }
+
+    @media screen and (max-width:520px) {
+        .items{
+            padding: 5px;
+            width: 100%;
+            row-gap: 5px;
+    
+            .item{
+                width: 40vw;
+                height: fit-content;
+                margin: 0;
+
+                &:nth-of-type(5){
+                    display: none;
+                }
+            }
+        }
+    }
+
+}
+
+
+
+.LandingPage_join{
+    width: 100%;
+    height: calc(100vh - 70px);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    background: white;
+    justify-content: center;
+    align-items: center;
+
+    p{
+        font-size: 1.5rem;
+        width: 70%;
+        text-align: center;
+    }
+
+    input{
+        width: 85%;
+        padding: 10px 15px;
+        padding-left: 40px;
+        box-shadow: rgba(0, 0, 0, 0.068) 0px 0px 10px;
+        font-size: 1.8rem;
+        outline: none;
+        border: none;
+        border: solid rgba(0, 0, 0, 0.425) 1.5px;
+        border-radius: 200px;
+    }
+
+    button{
+        padding: 10px 25px;
+        outline: none;
+        font-size: 1.4rem;
+        transition: all ease-in-out 0.2s;
+        border: none;
+        background-image:linear-gradient(to right bottom,#161e21,#515e67);
+        color: white;
+        border-radius: 100px;
+
+        &:active{
+            transform: scale(0.9);
+        }
+    }
+
+    @media screen and (max-width:500px) {
+        &{
+            p{
+                font-size: 1.5rem;
+                width: 80%;
+                text-align: justify;
+            }   
+
+            input{
+                font-size: 1.2rem;
+            }
+        }
+    }
+}
+
+footer{
+    width: 100%;
+    padding: 35px;
+    display: flex;
+    background: rgb(29, 28, 28);
+
+    .left{
+        width: 35%;
+        display: flex;
+        gap: 5px;
+        flex-direction: column;
+
+        h1{
+            font-size: 2.5rem;
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        p{
+            font-size: 1.2rem;
+            color: white;
+
+            select{
+                outline: none;
+                border: none;
+                padding: 4px;
+                font-size: 1.2rem;
+            }
+        }
+    }
+
+    .right{
+        width: 65%;
+        display: flex;
+        gap: 5px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-left: solid rgb(146, 144, 144) 1.2px;
+
+        p{
+            font-size: 1.6rem;
+            color: white;
+        }
+
+    }
+
+    @media screen and (max-width:600px) {
+        &{
+            flex-direction: column;
+            gap: 25px;
+    
+            .left{
+                width: 100%;
+                justify-content: center;
+                align-items: center;
+            }
+    
+            .right{
+                width: 100%;
+                border: none;
+            }
+        }
+    }
+}
+

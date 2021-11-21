@@ -1,0 +1,227 @@
+#pop-up-edit{
+    z-index: 150;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: none;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.459);
+    position: fixed;
+
+    &>p{
+        position: fixed;
+        top: 30px;
+        font-size: 1.4rem;
+        right: 30px;
+        color: white;
+    }
+
+    .EditProfile{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        width: 600px;
+        min-height: 200px;
+        border-radius: 5px;
+        background: white;
+        padding: 20px;
+
+        h1{
+            font-size: 2.4rem;
+            padding: 10px;
+            color: rgb(65, 65, 65);
+
+            img{
+                height: 30px;
+            }
+        }
+        hr{
+            outline: none;
+            border: none;
+            height: 1px;
+            background: rgba(0, 0, 0, 0.123);
+            margin-bottom: 10px;
+        }
+
+        p{
+            font-size: 1.2rem;
+            margin-bottom: 6px;
+            color: rgb(65, 65, 65);
+
+        }
+        input,textarea{
+            outline: none;
+            border: none;
+            width: 100%;
+            border: solid 1.2px rgb(209, 209, 209);
+            margin-bottom: 6px;
+            padding: 10px;
+            background: rgb(236, 236, 236);
+            font-size: 1.3rem;
+            border-radius: 5px;
+        }
+
+        div{
+            display: flex;
+            gap: 10px;
+
+            button{
+                width: 50%;
+                padding: 10px 15px;
+                outline: none;
+                border: none;
+                background: rgb(49, 47, 47);
+                color: white;
+                transition: all ease-in-out 0.2s;
+            }
+            button:active{
+                transform: scale(0.9);
+            }
+        }
+    }
+
+    .PostContextMenu{
+        background: white;
+        border-radius: 6px;
+        position: absolute;
+        top: 50%;
+        overflow: hidden;
+        left: 50%;
+        transform: translate(-50%,-50%);
+
+        p{
+            padding: 10px 25px;
+            font-size: 1.4rem;
+            cursor: default;
+            text-align: center;
+            color: rgb(66, 66, 66);
+            transition: all ease-in-out 0.2s;
+
+            &:hover{
+                background: rgb(48, 47, 47);
+                color: white;
+            }
+
+        }
+    }
+
+    .PostEditView{
+        background: white;
+        border-radius: 6px;
+        padding: 8px;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        position: absolute;
+        top: 50%;
+        overflow: hidden;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        
+        .display{
+            max-height: 70vh;
+            height: fit-content;
+            max-width: 90vw;
+
+            img{
+                height: 100%;
+                max-height: 70vh;
+                width: 100%;
+                object-fit: contain;
+            }
+
+            video{
+                max-height: 70vh;
+            }
+        }
+
+        input{
+            width: 100%;
+            min-width: 250px;
+            outline: none;
+            border: none;
+            background: rgb(231, 231, 231);
+            border-radius: 5px;
+            font-size: 1.3rem;
+            padding: 10px 18px;
+        }
+
+        .hori{
+            display: flex;
+            gap: 6px;
+
+            button{
+                padding: 10px 20px;
+                outline: none;
+                transition: all ease-in-out 0.2s;
+                border: none;
+                background-image:linear-gradient(to right bottom,#161e21,#515e67);
+                color: white;
+                border-radius: 6px;
+
+                &:active{
+                    transform: scale(0.9);
+                }
+            }
+            
+        }
+    }
+
+    .ExternalLinkView{
+        background: rgba(255, 255, 255, 0.856);
+        max-width: 90vw;
+        padding: 15px;
+        position: absolute;
+        display: flex;
+        align-items: center;
+        top: 50%;
+        overflow: hidden;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        
+        p{
+            font-size: 1.9rem;
+            text-overflow: ellipsis;
+            word-wrap: unset;
+            white-space: nowrap;  
+            overflow: hidden;
+        }
+
+        img{
+            width: 50px;
+            margin-left: 15px;
+            opacity: 0.6;
+            height: 50px;
+            object-fit: contain;
+        }
+    }
+
+    @media screen and (max-width:600px) {
+        .EditProfile{
+            width: 90%;
+        }
+
+        .PostEditView{
+            
+            .display{
+                height: fit-content;
+                width: 90vw;
+                max-width: unset;
+    
+                img{
+                    max-height: 70vh;
+                    width: 90vw;
+                    object-fit: contain;
+                }
+
+                video{
+                    max-height: 70vh;
+                    width: 100%;
+                }
+            }
+    
+        }
+    
+    }
+}

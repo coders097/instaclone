@@ -1,0 +1,144 @@
+.UserDtailsView{
+    width: 60%;
+    min-height: 300px;
+    margin: 10px auto;
+  
+    .header{
+      width: 100%;
+      padding: 30px;
+      display: flex;
+      align-items: center;
+  
+      &>img{
+        height: 200px;
+        width: 200px;
+        margin-right: 100px;
+        margin-left: 50px;
+        object-fit: cover;
+        border-radius: 50%;
+      }
+  
+      .user-details{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+  
+        h2{
+          font-size: 3rem;
+  
+          span{
+            cursor: pointer;
+  
+            img{
+              height: 35px;
+              width: 35px;
+              object-fit: contain;
+            }
+          }
+        }
+  
+        ul{
+          display: flex;
+          gap: 20px;
+          list-style: none;
+          
+          li{
+            font-size: 1.2rem;
+  
+            span{
+              font-weight: 800;
+              font-size: 1.3rem;
+            }
+          }
+        }
+
+        .about{
+          font-size: 1.4rem;
+        }
+
+        button{
+            padding: 10px 25px;
+            outline: none;
+            transition: all ease-in-out 0.2s;
+            border: none;
+            width: fit-content;
+            background-image:linear-gradient(to right bottom,#161e21,#515e67);
+            color: white;
+            border-radius: 5px;
+
+            &:active{
+                transform: scale(0.9);
+            }
+        }
+      }
+    }
+  
+    hr{
+      height: 1px;
+      outline: none;
+      border: none;
+      background: rgba(0, 0, 0, 0.158);
+    }
+  
+  }
+  
+  @media screen and (max-width:1100px) {
+    .UserDtailsView{
+      width: 80%;
+    
+      .header{
+  
+        &>img{
+          margin-left: 0px;
+        }
+      }
+    }
+  }
+  
+  @media screen and (max-width:860px) {
+    .UserDtailsView{
+      width: 90%;
+  
+      .header{
+        
+        &>img{
+          margin-right: 30px;
+        }
+      }
+    }
+  }
+  
+  @media screen and (max-width:650px) {
+    .UserDtailsView{
+      width: 100%;
+      
+      .header{
+        flex-direction: column;
+        padding: 20px;
+        gap: 10px;
+        
+        &>img{
+          margin-right: 0px;
+          height: 220px;
+          width: 220px;
+        }
+  
+        .user-details{
+          width: 100%;
+          align-items: center;
+  
+          h2{
+            font-size: 2.5rem;
+            text-align: center;
+          }
+  
+          ul{
+            justify-content: center;
+          }
+          .about{
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
